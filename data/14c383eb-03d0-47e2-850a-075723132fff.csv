@@ -1,0 +1,13 @@
+Date,Region,Revenue
+2023-01-01,Revenue_USA,250000
+2023-04-01,Revenue_USA,275000
+2023-07-01,Revenue_USA,300000
+2023-10-01,Revenue_USA,320000
+2023-01-01,Revenue_Europe,150000
+2023-04-01,Revenue_Europe,165000
+2023-07-01,Revenue_Europe,180000
+2023-10-01,Revenue_Europe,200000
+2023-01-01,Revenue_Asia,100000
+2023-04-01,Revenue_Asia,110000
+2023-07-01,Revenue_Asia,120000
+2023-10-01,Revenue_Asia,130000

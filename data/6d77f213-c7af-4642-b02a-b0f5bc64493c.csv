@@ -1,0 +1,17 @@
+division,metric,amount
+Division A,revenue,500000
+Division A,revenue,600000
+Division A,revenue,700000
+Division A,revenue,800000
+Division B,revenue,300000
+Division B,revenue,350000
+Division B,revenue,400000
+Division B,revenue,450000
+Division A,expenses,300000
+Division A,expenses,350000
+Division A,expenses,400000
+Division A,expenses,450000
+Division B,expenses,150000
+Division B,expenses,175000
+Division B,expenses,200000
+Division B,expenses,225000
