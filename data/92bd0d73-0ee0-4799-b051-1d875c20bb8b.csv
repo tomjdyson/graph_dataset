@@ -1,0 +1,5 @@
+Quarter,Division,Revenue,Expenses,Net_Profit,Region,Customer_Satisfaction
+Q1 2023,Software,150000,90000,60000,North America,88
+Q2 2023,Software,200000,130000,70000,Europe,85
+Q3 2023,Hardware,120000,70000,50000,Asia,90
+Q4 2023,Services,170000,100000,70000,North America,92

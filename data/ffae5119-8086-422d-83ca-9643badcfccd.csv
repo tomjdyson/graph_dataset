@@ -1,0 +1,9 @@
+Date,Division,Region,Revenue,Expenses,Profit,Customer_Count
+2022-Q1,Sales,North America,150000,100000,50000,250
+2022-Q2,Sales,North America,175000,120000,55000,300
+2022-Q3,Sales,Europe,200000,125000,75000,350
+2022-Q4,Sales,Europe,210000,135000,75000,400
+2023-Q1,Marketing,Asia,180000,110000,70000,320
+2023-Q2,Marketing,Asia,190000,115000,75000,360
+2023-Q3,Marketing,North America,220000,130000,90000,400
+2023-Q4,Marketing,Europe,230000,140000,90000,450

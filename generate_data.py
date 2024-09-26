@@ -11,9 +11,9 @@ def data_prompt():
         temperature=0.99,
         messages=[
             {"role": "user", "content": """
-        Generate a random dataset that mimics that which would be recorded for a company filings report
+        Generate a random dataset that mimics that which would be recorded for a company report
         The data should be small spanning 4 - 12 dates of either quarterly or yearly. The data could span one or
-         multiple of; divisions, financial indicators, geographies etc. 
+         multiple of; divisions, company indicators, geographies, products 
          Output your data in json, with the 
          name of the data as the key and the value as data that can be read into a pandas dataframe with one call
          All columns of the dataframe have to be the same length: 

@@ -1,10 +1,14 @@
 from openai import OpenAI
+import random
 
 client = OpenAI()
 
 
 def graph_prompt(data, name):
     columns = list(data)
+
+    data_labels = random.choice(["Use Data labels in the plot", "Do not use data labels in the plot"])
+    plot_types = random.choice(["bar", "line", "pie", "scatter", "area"])
 
     return client.chat.completions.create(
         model="gpt-4o-mini",
@@ -17,10 +21,11 @@ def graph_prompt(data, name):
             Presume matplotlib is imported as plt, pandas is imported as pd and seaborn is imported as sns, use whichever
             youd like
             do not show the plot
-            the plot can be any type; line, bar, pie etc
-            you can add data labels to the plot if you want
+            Use random colours as youd like
+            The plot should be a {plot_types} chart
+            {data_labels}
             the image can be any size you like
-            Create your python as a function that takes df & uid, saves the plot as './data/uid.png' and the data
+            Create your python as a function that takes df & uid, saves the plot as './data/uid.jpg' and the data
             used in the plot as './data/uid.csv'
             python ```data_plotter(df, uid): ```
             """}])

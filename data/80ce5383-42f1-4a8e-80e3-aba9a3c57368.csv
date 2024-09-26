@@ -1,0 +1,9 @@
+date,division,region,product,sales,expenses,net_profit
+2022-01-01,Electronics,North America,Smartphones,250000,150000,100000
+2022-04-01,Electronics,North America,Smartphones,300000,175000,125000
+2022-07-01,Electronics,North America,Smartphones,320000,185000,135000
+2022-10-01,Electronics,North America,Smartphones,280000,160000,120000
+2023-01-01,Appliances,Europe,Refrigerators,150000,80000,70000
+2023-04-01,Appliances,Europe,Refrigerators,170000,90000,80000
+2023-07-01,Appliances,Europe,Refrigerators,200000,95000,105000
+2023-10-01,Appliances,Europe,Refrigerators,190000,85000,105000
