@@ -1,0 +1,13 @@
+Division,Quarter,Revenue,Profit,Geography
+Sales,Q1,500000,120000,North America
+Sales,Q2,650000,180000,North America
+Sales,Q3,700000,200000,North America
+Sales,Q4,800000,250000,North America
+Marketing,Q1,300000,60000,Europe
+Marketing,Q2,350000,80000,Europe
+Marketing,Q3,400000,90000,Europe
+Marketing,Q4,500000,120000,Europe
+R&D,Q1,200000,40000,Asia
+R&D,Q2,250000,50000,Asia
+R&D,Q3,300000,70000,Asia
+R&D,Q4,400000,90000,Asia

@@ -1,0 +1,9 @@
+Date,Division,Region,Revenue,Profit,Customer_Count
+2023-01-01,Sales,North America,500000,150000,200
+2023-04-01,Sales,North America,600000,180000,250
+2023-07-01,Sales,North America,800000,220000,300
+2023-10-01,Sales,North America,750000,200000,290
+2022-01-01,Marketing,Europe,300000,80000,120
+2022-04-01,Marketing,Europe,320000,85000,130
+2022-07-01,Marketing,Europe,350000,95000,140
+2022-10-01,Marketing,Europe,400000,100000,150

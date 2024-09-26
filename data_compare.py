@@ -29,12 +29,14 @@ if __name__ == '__main__':
     import os
     from graph_vision import build_url, url_response, load_response_data
 
-    all_files = os.listdir('./data/')
+
+    current_dir = "/data/test/"
+    all_files = os.listdir(f'.{current_dir}')
     all_uids = [i.replace('.jpg', '') for i in all_files if i[-3:] == 'jpg']
     all_acc = {}
     for uid in all_uids[:10]:
         try:
-            url = build_url(uid + '.jpg')
+            url = build_url(current_dir, uid + '.jpg')
             response = url_response(url)
             new_data = load_response_data(response)
             original_data = pd.read_csv("./data/" + uid + '.csv')

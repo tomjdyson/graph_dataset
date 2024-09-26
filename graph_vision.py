@@ -5,8 +5,8 @@ import pandas as pd
 client = OpenAI()
 
 
-def build_url(uid):
-    return f"https://github.com/tomjdyson/graph_dataset/blob/main/data/{uid}?raw=true"
+def build_url(dir, uid):
+    return f"https://github.com/tomjdyson/graph_dataset/blob/main/{dir}{uid}?raw=true"
 
 
 def url_response(url):
@@ -44,10 +44,11 @@ def load_response_data(response):
 if __name__ == '__main__':
     import os
 
-    all_files = os.listdir('./data/')
+    current_dir = "/data/test/"
+    all_files = os.listdir(f'.{current_dir}')
     all_uids = [i.replace('.jpg', '') for i in all_files if i[-3:] == 'jpg']
     for uid in all_uids:
-        url = build_url(uid + '.jpg')
+        url = build_url(current_dir, uid + '.jpg')
         response = url_response(url)
         new_data = load_response_data(response)
         original_data = pd.read_csv("./data/" + uid + '.csv')

@@ -1,0 +1,6 @@
+date,division,region,revenue,expense,profit,customer_satisfaction
+2023-01-01,Sales,North America,150000,100000,50000,88
+2023-04-01,Marketing,Europe,175000,120000,55000,90
+2023-07-01,Production,Asia,200000,140000,60000,92
+2023-10-01,Research & Development,South America,225000,160000,65000,91
+2024-01-01,Customer Support,Africa,250000,180000,70000,93

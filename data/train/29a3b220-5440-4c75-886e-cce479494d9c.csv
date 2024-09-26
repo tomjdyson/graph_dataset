@@ -1,0 +1,5 @@
+Quarter,Geography,Division,Product,Revenue,Expenses,NetProfit,CustomerCount
+Q1 2023,North America,Sales,Product A,150000,80000,70000,300
+Q2 2023,North America,Marketing,Product B,200000,90000,110000,400
+Q3 2023,Europe,Sales,Product A,180000,75000,105000,350
+Q4 2023,Europe,Marketing,Product B,210000,95000,115000,450
