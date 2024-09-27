@@ -9,9 +9,9 @@ def build_url(dir, uid):
     return f"https://github.com/tomjdyson/graph_dataset/blob/main/{dir}{uid}?raw=true"
 
 
-def url_response(url):
+def url_response(url, model):
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model=model,
         messages=[
             {
                 "role": "user",
@@ -40,6 +40,11 @@ def load_response_data(response):
     cleaned_json = json.loads(cleaned_str)
     return pd.DataFrame(list(cleaned_json.values())[0])
 
+def load_fine_tuned(response):
+    string_data = response.choices[0].message.content
+    cleaned_str = string_data
+    cleaned_json = json.loads(cleaned_str)
+    return pd.DataFrame(cleaned_json)
 
 if __name__ == '__main__':
     import os

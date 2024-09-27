@@ -4,9 +4,9 @@ import json
 
 client = OpenAI()
 
-def compare_prompt(original_data, extracted_data):
+def compare_prompt(original_data, extracted_data, model):
     return client.chat.completions.create(
-        model="gpt-4o-mini",
+        model=model,
         temperature=0.001,
         messages=[
             {"role": "user", "content": f"""
@@ -27,25 +27,31 @@ def compare_prompt(original_data, extracted_data):
 
 if __name__ == '__main__':
     import os
-    from graph_vision import build_url, url_response, load_response_data
+    from graph_vision import build_url, url_response, load_response_data, load_fine_tuned
 
-
+    current_run_version = "0.0.3"
+    current_model = 'ft:gpt-4o-2024-08-06-alpha:tomoro::ABzozYXA'
+    current_model_name = 'gpt-4o-ft'
+    comparison_model = 'gpt-4o-mini'
     current_dir = "/data/test/"
     all_files = os.listdir(f'.{current_dir}')
     all_uids = [i.replace('.jpg', '') for i in all_files if i[-3:] == 'jpg']
     all_acc = {}
-    for uid in all_uids[:10]:
+    for uid in all_uids:
         try:
             url = build_url(current_dir, uid + '.jpg')
-            response = url_response(url)
-            new_data = load_response_data(response)
-            original_data = pd.read_csv("./data/" + uid + '.csv')
+            response = url_response(url, model = current_model)
+            new_data = load_fine_tuned(response)
+            original_data = pd.read_csv(f'.{current_dir}' + uid + '.csv')
 
-            python_response = compare_prompt(original_data, new_data)
+            python_response = compare_prompt(original_data, new_data, comparison_model)
             data = python_response.choices[0].message.content
             python_func = data.split('```')[1].replace('python', '')
             exec(python_func)
             accuracy, combined_data = data_compare(original_data = original_data, extracted_data = new_data)
+
+            if len(accuracy) == 0:
+                print('')
 
             all_acc[uid] = accuracy
 
@@ -57,6 +63,7 @@ if __name__ == '__main__':
 
 
     all_acc_df = pd.DataFrame(all_acc).T.reset_index().melt(id_vars = 'index').dropna()
-    acc = all_acc_df['value'].mean()
-    group_acc = all_acc_df.groupby('index')['value'].mean().mean()
-    print(all_acc)
+    all_acc_df.to_csv(f'./evals/{current_model_name}_{comparison_model}_{current_run_version}.csv', index = False)
+    print(all_acc_df['value'].mean())
+    print(all_acc_df.groupby('index')['value'].mean().mean())
+    print(all_acc_df['index'].unique().shape[0]/len(all_uids))
